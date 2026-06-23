@@ -1,0 +1,11 @@
+/* Entry point for global styles — import order matters */
+@import './styles/variables.css';
+@import './styles/typography.css';
+@import './styles/animations.css';
+@import './styles/responsive.css';
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

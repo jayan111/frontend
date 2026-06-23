@@ -1,0 +1,14 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  transition: background var(--ease-base), color var(--ease-base);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

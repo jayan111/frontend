@@ -1,0 +1,54 @@
+/* ── Breakpoints (mobile-first) ──
+   480px  small phones
+   768px  tablets / large phones
+   1024px desktops
+   1440px large desktops
+─────────────────────────────── */
+
+@media (max-width: 479px) {
+  :root {
+    --text-4xl: 26px;
+    --text-3xl: 22px;
+    --text-2xl: 18px;
+    --sp-10: 24px;
+    --sp-8:  20px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --text-4xl: 28px;
+    --text-3xl: 24px;
+  }
+}
+
+/* ── Responsive utility classes ── */
+
+/* Hide on mobile, show on tablet+ */
+.show-tablet { display: none; }
+@media (min-width: 768px) { .show-tablet { display: initial; } }
+
+/* Hide on desktop */
+.hide-desktop { display: initial; }
+@media (min-width: 1024px) { .hide-desktop { display: none; } }
+
+/* Flex grid that wraps and fills */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-6);
+}
+
+/* Center page content with max-width */
+.page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--sp-6);
+}
+
+@media (max-width: 767px) {
+  .page-container {
+    padding: 0 var(--sp-4);
+  }
+}

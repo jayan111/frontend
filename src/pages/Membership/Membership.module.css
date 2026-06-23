@@ -1,0 +1,100 @@
+.wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-10) var(--sp-6);
+  background: var(--color-bg-page);
+}
+
+.heading { font-size: var(--text-4xl); margin-bottom: var(--sp-2); text-align: center; }
+.sub { color: var(--color-text-muted); margin-bottom: var(--sp-10); text-align: center; }
+
+.banner {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3) var(--sp-6);
+  color: var(--color-gold);
+  margin-bottom: var(--sp-8);
+  font-size: var(--text-base);
+  animation: slideDown var(--ease-base) forwards;
+}
+
+.cards {
+  display: flex;
+  gap: var(--sp-6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ── Plan card ── */
+.planCard {
+  background: var(--color-bg-card);
+  border: 2px solid;
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--ease-base), box-shadow var(--ease-base);
+  animation: slideUp var(--ease-base) forwards;
+}
+.planCard:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+.planBadge {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  color: #111;
+  font-weight: var(--fw-bold);
+  font-size: var(--text-sm);
+  align-self: flex-start;
+}
+
+.price { font-size: 34px; font-weight: var(--fw-bold); }
+.pricePer { font-size: var(--text-sm); font-weight: var(--fw-normal); color: var(--color-text-muted); }
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  flex: 1;
+}
+
+.feature { color: var(--color-text-secondary); font-size: var(--text-sm); }
+
+.activePill {
+  border: 2px solid;
+  border-radius: var(--radius-md);
+  padding: 10px;
+  text-align: center;
+  font-weight: var(--fw-bold);
+  margin-top: auto;
+}
+
+/* ── Payment modal ── */
+.modalLabel { color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--sp-2); }
+
+.cardEl {
+  background: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px var(--sp-3);
+  min-height: 42px;
+  transition: border-color var(--ease-fast);
+}
+.cardEl:focus-within { border-color: var(--color-accent); }
+
+.modalError { color: var(--color-error); font-size: var(--text-sm); margin-top: var(--sp-2); }
+.modalSuccess { color: var(--color-success); text-align: center; font-size: var(--text-md); padding: var(--sp-5) 0; }
+.modalMuted { color: var(--color-text-muted); text-align: center; padding: var(--sp-5) 0; }
+
+.modalActions {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-5);
+}
