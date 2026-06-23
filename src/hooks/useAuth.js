@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { authAPI, profileAPI } from '../services/api';
 import { setUser, clearUser } from '../store/slices/authSlice';
+import { setMembership, clearMembership } from '../store/slices/membershipSlice';
 
 export const useProfile = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,11 @@ export const useProfile = () => {
     queryFn: async () => {
       const res = await profileAPI.get();
       dispatch(setUser(res.data));
+      // Profile response includes isPremium + membershipType — sync to membership slice
+      dispatch(setMembership({
+        isPremium: res.data.isPremium,
+        membershipType: res.data.membershipType,
+      }));
       return res.data;
     },
     retry: false,
@@ -51,6 +57,7 @@ export const useLogout = () => {
     mutationFn: authAPI.logout,
     onSuccess: () => {
       dispatch(clearUser());
+      dispatch(clearMembership());
       queryClient.clear();
       navigate('/login');
     },

@@ -21,7 +21,7 @@ const Signup = () => {
           <input style={styles.input} type="text" placeholder="First Name" value={form.firstName} onChange={set('firstName')} required />
           <input style={styles.input} type="text" placeholder="Last Name" value={form.lastName} onChange={set('lastName')} />
         </div>
-        <input style={styles.input} type="email" placeholder="Email" value={form.emailId} onChange={set('emailId')} required />
+        <input style={styles.input} type="emailId" placeholder="emailId" value={form.emailId} onChange={set('emailId')} required />
         <input style={styles.input} type="password" placeholder="Password" value={form.password} onChange={set('password')} required />
         {error && <p style={styles.error}>{error.response?.data || error.message}</p>}
         <button style={styles.btn} type="submit" disabled={isPending}>

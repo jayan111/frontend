@@ -17,8 +17,8 @@ const Login = () => {
       <form onSubmit={handleSubmit} style={styles.form}>
         <input
           style={styles.input}
-          type="email"
-          placeholder="Email"
+          type="emailId"
+          placeholder="emailId"
           value={form.emailId}
           onChange={(e) => setForm({ ...form, emailId: e.target.value })}
           required
