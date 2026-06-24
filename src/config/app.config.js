@@ -1,7 +1,7 @@
 export const APP_CONFIG = {
   name: 'DevTinder',
   apiBase: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000',
-  stripeKey: import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '',
+  stripeKey: import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_test_51SqG4GLi53wGpTb7IkGPOhAPSTx3aPwlkIl4x956g5GivaUfxLb0R1shrTr42gfLuVDkiFD9kr4jRFxjqsfZZwZ600eP4k6m82',
   queryStaleTime: 1000 * 60 * 5,   // 5 minutes
   toastDuration: 4000,
 };

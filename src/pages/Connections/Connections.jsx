@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useConnections } from '../../hooks/useConnections';
 import Loader from '../../components/common/Loader/Loader';
 import styles from './Connections.module.css';
@@ -23,6 +24,14 @@ const ConnectionCard = ({ user }) => {
             {user.skills.map((s) => <span key={s} className={styles.skill}>{s}</span>)}
           </div>
         )}
+      </div>
+      <div className={styles.actions}>
+        <Link to={`/chat/${user._id}`} state={{ user }} className={styles.chatBtn}>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          Chat
+        </Link>
       </div>
     </div>
   );

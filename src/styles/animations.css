@@ -34,6 +34,21 @@
   100% { background-position:  400px 0; }
 }
 
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(110%); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+@keyframes shrinkWidth {
+  from { width: 100%; }
+  to   { width: 0%;   }
+}
+
+@keyframes msgIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+
 /* ── Utility classes ── */
 .anim-fade-in   { animation: fadeIn   var(--ease-base) forwards; }
 .anim-slide-up  { animation: slideUp  var(--ease-base) forwards; }

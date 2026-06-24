@@ -16,6 +16,7 @@ const EditProfile = lazy(() => import('./pages/EditProfile/EditProfile'));
 const Membership  = lazy(() => import('./pages/Membership/Membership'));
 const Connections = lazy(() => import('./pages/Connections/Connections'));
 const Requests    = lazy(() => import('./pages/Requests/Requests'));
+const Chat        = lazy(() => import('./pages/Chat/Chat'));
 const NotFound    = lazy(() => import('./pages/NotFound/NotFound'));
 
 const PageLoader = () => <Loader size="lg" fullscreen />;
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/membership" element={<ProtectedRoute><Membership /></ProtectedRoute>} />
             <Route path="/connections"element={<ProtectedRoute><Connections /></ProtectedRoute>} />
             <Route path="/requests"   element={<ProtectedRoute><Requests /></ProtectedRoute>} />
+            <Route path="/chat/:targetUserId" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
             <Route path="*"           element={<NotFound />} />
           </Routes>
         </Suspense>

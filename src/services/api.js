@@ -36,4 +36,9 @@ export const userAPI = {
   getReceivedRequests: () => api.get('/user/requests/received'),
 };
 
+export const chatAPI = {
+  getHistory: (targetUserId, page = 1, limit = 50) =>
+    api.get(`/chat/${targetUserId}`, { params: { page, limit } }),
+};
+
 export default api;

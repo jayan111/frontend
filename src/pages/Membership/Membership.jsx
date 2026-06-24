@@ -60,7 +60,7 @@ const PaymentModal = ({ plan, onClose, onSuccess }) => {
     loadStripeJS()
       .then(() => {
         if (stale) return;
-        stripeRef.current = window.Stripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+        stripeRef.current = window.Stripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY|| 'pk_test_51SqG4GLi53wGpTb7IkGPOhAPSTx3aPwlkIl4x956g5GivaUfxLb0R1shrTr42gfLuVDkiFD9kr4jRFxjqsfZZwZ600eP4k6m82');
         const elements = stripeRef.current.elements();
         cardElRef.current = elements.create('card', {
           style: { base: { color: 'var(--color-text-primary)', fontSize: '16px', '::placeholder': { color: 'var(--color-text-muted)' } } },
